@@ -35,9 +35,90 @@ const Presentation = () => {
   }, [currentSlide]);
 
   const slides = [
-    // Slide 1: Title
+    // Slide 1: Personal Introduction
     {
       id: 1,
+      content: (
+        <div className="h-full flex flex-col justify-center items-center relative overflow-hidden">
+          <div className="absolute inset-0">
+            {/* Background with mountain silhouette effect */}
+            <div className="absolute inset-0 bg-gradient-to-b from-sky-900 via-blue-900 to-indigo-950"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
+          </div>
+          
+          <div className="relative z-10 text-center space-y-6 px-8 max-w-4xl">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+              {/* Profile Photo Placeholder */}
+              <div className="relative group">
+                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
+                  <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
+                    {/* Replace this div with your actual image */}
+                    <div className="text-gray-400 text-center p-4">
+                      <Users className="w-20 h-20 mx-auto mb-2" />
+                      <p className="text-sm">[Your Photo Here]</p>
+                      <p className="text-xs mt-2">Replace with your image</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Mountain badge */}
+                <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-green-600 to-teal-600 rounded-full p-3 shadow-lg">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              {/* Info Section */}
+              <div className="text-left space-y-4">
+                <h1 className="text-5xl font-black text-white mb-2">
+                  [Your Name]
+                </h1>
+                <p className="text-2xl text-blue-400 font-light">
+                  [Your Profession]
+                </p>
+                
+                <div className="flex items-center space-x-3 mt-6 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 inline-flex">
+                  <span className="text-xl">🏔️</span>
+                  <span className="text-lg text-gray-300">Trekking Enthusiast</span>
+                  <span className="text-gray-400">|</span>
+                  <span className="text-lg text-blue-300">Thorang La Pass</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Trekking Photo Section */}
+            <div className="mt-8 relative group cursor-pointer">
+              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-2 backdrop-blur-sm">
+                <div className="relative overflow-hidden rounded-lg">
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                    {/* Replace with your Thorang La Pass photo */}
+                    <div className="text-gray-400 text-center">
+                      <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
+                      </svg>
+                      <p className="text-sm">[Your Thorang La Pass Photo]</p>
+                      <p className="text-xs mt-1 text-blue-300">5,416m altitude</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="mt-8 text-gray-400">
+              <p className="text-lg italic">"From conquering mountains to exploring digital peaks"</p>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-10 animate-bounce">
+            <ChevronRight className="w-8 h-8 text-gray-400" />
+          </div>
+        </div>
+      ),
+    },
+    // Slide 2: Title
+    {
+      id: 2,
       content: (
         <div className="h-full flex flex-col justify-center items-center relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 opacity-50"></div>
@@ -81,14 +162,17 @@ const Presentation = () => {
               <p className="text-4xl font-black text-white">13 trillion tokens</p>
             </div>
             <div className="bg-gradient-to-br from-orange-900/20 to-yellow-900/20 p-8 rounded-2xl border border-orange-500/30 transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-4">🏛️</div>
+              <div className="text-6xl mb-4">📖</div>
               <h3 className="text-2xl font-bold text-orange-400 mb-2">That's like:</h3>
-              <p className="text-xl text-white">Reading every book in the Library of Congress <span className="font-black text-3xl text-yellow-400">10,000 times</span></p>
+              <p className="text-xl text-white">Reading every book in <span className="font-bold text-yellow-400">Tribhuvan University Library</span> <span className="font-black text-3xl text-yellow-400">50 million times</span></p>
+              <p className="text-sm text-gray-400 mt-2">Or all of Mahabharat 100 million times!</p>
             </div>
             <div className="bg-gradient-to-br from-yellow-900/20 to-green-900/20 p-8 rounded-2xl border border-yellow-500/30 transform hover:scale-105 transition-transform">
-              <div className="text-6xl mb-4">🍔</div>
-              <h3 className="text-2xl font-bold text-yellow-400 mb-2">Daily diet:</h3>
-              <p className="text-xl text-white">570GB → <span className="text-4xl font-black text-green-400">45TB+</span></p>
+              <div className="text-6xl mb-4">🥟</div>
+              <h3 className="text-2xl font-bold text-yellow-400 mb-2">Daily momo diet:</h3>
+              <p className="text-xl text-white">570GB = <span className="text-2xl font-bold text-orange-400">11.4 billion momos</span></p>
+              <p className="text-xl text-white mt-2">→ <span className="text-3xl font-black text-green-400">900 billion momos!</span></p>
+              <p className="text-sm text-gray-400">(45TB+ daily)</p>
             </div>
             <div className="bg-gradient-to-br from-green-900/20 to-blue-900/20 p-8 rounded-2xl border border-green-500/30 transform hover:scale-105 transition-transform">
               <div className="text-6xl mb-4">📈</div>
