@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ai-hunger-presentation/static/css/main.e6c13ad2.css",
+    "main.js": "/ai-hunger-presentation/static/js/main.3f9bb419.js",
+    "index.html": "/ai-hunger-presentation/index.html",
+    "main.e6c13ad2.css.map": "/ai-hunger-presentation/static/css/main.e6c13ad2.css.map",
+    "main.3f9bb419.js.map": "/ai-hunger-presentation/static/js/main.3f9bb419.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3f9bb419.js"
+  ]
+}
