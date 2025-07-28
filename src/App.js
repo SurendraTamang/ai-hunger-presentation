@@ -368,9 +368,116 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 6: Why Choose Scrapy?
+    // Slide 6: AI Tools & Other Languages
     {
       id: 6,
+      content: (
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 lg:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
+            AI Tools & Other Languages
+          </h2>
+          
+          {/* AI-Powered Tools Section */}
+          <div className="w-full max-w-6xl mb-8">
+            <h3 className="text-2xl font-bold text-pink-400 mb-6 text-center">🤖 AI-Powered Scraping</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 px-4">
+              {[
+                {
+                  tool: 'Firecrawl',
+                  desc: 'AI web-to-markdown',
+                  icon: '🔥',
+                  color: 'from-orange-600 to-red-600'
+                },
+                {
+                  tool: 'Crawl4AI',
+                  desc: 'LLM-friendly crawler',
+                  icon: '🚀',
+                  color: 'from-blue-600 to-indigo-600'
+                },
+                {
+                  tool: 'ScrapeGraphAI',
+                  desc: 'Graph-based AI scraper',
+                  icon: '🧠',
+                  color: 'from-purple-600 to-pink-600'
+                },
+                {
+                  tool: 'Jina AI Reader',
+                  desc: 'URL-to-markdown API',
+                  icon: '📖',
+                  color: 'from-cyan-600 to-blue-600'
+                },
+                {
+                  tool: 'ScrapeOwl',
+                  desc: 'Smart JS rendering',  
+                  icon: '🦉',
+                  color: 'from-teal-600 to-green-600'
+                },
+                {
+                  tool: 'Browserless',
+                  desc: 'AI browser automation',
+                  icon: '🤖',
+                  color: 'from-emerald-600 to-cyan-600'
+                },
+              ].map((item, idx) => (
+                <div key={idx} className={`bg-gradient-to-br ${item.color} p-4 rounded-xl`}>
+                  <div className="text-center">
+                    <span className="text-3xl">{item.icon}</span>
+                    <h4 className="text-lg font-bold text-white mt-2">{item.tool}</h4>
+                    <p className="text-white/80 text-sm mt-1">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Other Languages Section */}
+          <div className="w-full max-w-6xl">
+            <h3 className="text-2xl font-bold text-purple-400 mb-6 text-center">🌐 Beyond Python</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+              {[
+                {
+                  language: 'JavaScript/TypeScript',
+                  tools: ['Puppeteer', 'Playwright', 'Cheerio', 'Selenium WebDriver'],
+                  icon: '🟨',
+                  color: 'from-yellow-600 to-orange-600'
+                },
+                {
+                  language: 'Go (Golang)',
+                  tools: ['Colly', 'chromedp', 'GoQuery', 'Surf'],
+                  icon: '🐹',
+                  color: 'from-cyan-600 to-blue-600'
+                },
+                {
+                  language: 'Rust',
+                  tools: ['reqwest', 'scraper', 'headless_chrome', 'fantoccini'],
+                  icon: '🦀',
+                  color: 'from-orange-600 to-red-600'
+                },
+              ].map((lang, idx) => (
+                <div key={idx} className={`bg-gradient-to-br ${lang.color} p-6 rounded-xl`}>
+                  <div className="text-center mb-4">
+                    <span className="text-4xl">{lang.icon}</span>
+                    <h4 className="text-xl font-bold text-white mt-2">{lang.language}</h4>
+                  </div>
+                  <ul className="space-y-1">
+                    {lang.tools.map((tool, i) => (
+                      <li key={i} className="text-white/90 text-sm">• {tool}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-lg text-gray-400 italic">Choose the right tool for your use case and team expertise</p>
+          </div>
+        </div>
+      ),
+    },
+    // Slide 7: Why Choose Scrapy?
+    {
+      id: 7,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -414,9 +521,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 7: Your First Scrapy Spider
+    // Slide 8: Your First Scrapy Spider
     {
-      id: 7,
+      id: 8,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
@@ -457,9 +564,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 8: Scrapy Architecture
+    // Slide 9: Scrapy Architecture
     {
-      id: 8,
+      id: 9,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
@@ -497,9 +604,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 9: Scrapy ETL Pipeline for Data Engineers 
+    // Slide 10: Scrapy ETL Pipeline for Data Engineers 
     {
-      id: 9,
+      id: 10,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -595,9 +702,66 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 10: Best Practices & Ethics
+    // Slide 11: Before You Start Scraping
     {
-      id: 10,
+      id: 11,
+      content: (
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 lg:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
+            Before You Start Scraping
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 w-full max-w-6xl px-4">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">📋 Pre-Scraping Checklist</h3>
+              {[
+                { icon: '🔍', title: 'Check for APIs First', desc: 'Official APIs are always better than scraping' },
+                { icon: '🤖', title: 'Read robots.txt', desc: 'Respect the website\'s scraping rules' },
+                { icon: '📋', title: 'Review Terms of Service', desc: 'Ensure you\'re legally compliant' },
+                { icon: '🧪', title: 'Start Small', desc: 'Test with a few pages before scaling' },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-yellow-900/20 p-4 rounded-lg border border-yellow-500/50">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <h4 className="text-lg font-bold text-yellow-400">{item.title}</h4>
+                      <p className="text-gray-300 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-orange-400 mb-6 text-center">🚀 Planning Essentials</h3>
+              {[
+                { icon: '💾', title: 'Plan Data Storage', desc: 'Database, CSV, JSON - decide early' },
+                { icon: '📊', title: 'Set Up Monitoring', desc: 'Track success rates and errors' },
+                { icon: '⏱️', title: 'Design Rate Limiting', desc: 'Be respectful to target servers' },
+                { icon: '🔄', title: 'Plan for Changes', desc: 'Websites change - build flexible scrapers' },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-orange-900/20 p-4 rounded-lg border border-orange-500/50">
+                  <div className="flex items-start space-x-3">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div>
+                      <h4 className="text-lg font-bold text-orange-400">{item.title}</h4>
+                      <p className="text-gray-300 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-lg text-gray-400 italic">Preparation prevents poor performance!</p>
+          </div>
+        </div>
+      ),
+    },
+    // Slide 12: Best Practices & Ethics
+    {
+      id: 12,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
@@ -642,9 +806,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 11: Common Challenges
+    // Slide 13: Common Challenges
     {
-      id: 11,
+      id: 13,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400">
@@ -689,9 +853,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 12: Real-World Applications
+    // Slide 14: Real-World Applications
     {
-      id: 12,
+      id: 14,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -740,9 +904,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 13: Scaling to Production
+    // Slide 15: Scaling to Production
     {
-      id: 13,
+      id: 15,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -783,9 +947,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 14: Your Learning Journey
+    // Slide 16: Your Learning Journey
     {
-      id: 14,
+      id: 16,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
@@ -835,9 +999,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 15: Questions & Resources
+    // Slide 17: Questions & Resources
     {
-      id: 15,
+      id: 17,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20"></div>
