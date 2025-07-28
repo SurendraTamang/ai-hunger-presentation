@@ -1,8 +1,8 @@
 {
-  "name": "ai-hunger-presentation",
+  "name": "webscraping-101-presentation",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://surendratamang.github.io/ai-hunger-presentation/",
+  "homepage": "https://surendratamang.github.io/webscraping-101-presentation/",
 
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

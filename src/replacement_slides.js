@@ -1,152 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Code, Globe, Users } from 'lucide-react';
-
-const Presentation = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [animateIn, setAnimateIn] = useState(true);
-
-  const nextSlide = () => {
-    if (currentSlide < slides.length - 1) {
-      setAnimateIn(false);
-      setTimeout(() => {
-        setCurrentSlide(currentSlide + 1);
-        setAnimateIn(true);
-      }, 300);
-    }
-  };
-
-  const prevSlide = () => {
-    if (currentSlide > 0) {
-      setAnimateIn(false);
-      setTimeout(() => {
-        setCurrentSlide(currentSlide - 1);
-        setAnimateIn(true);
-      }, 300);
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    };
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentSlide, nextSlide, prevSlide]);
-
-  const slides = [
-    // Slide 1: Personal Introduction
-    {
-      id: 1,
-      content: (
-        <div className="h-full flex flex-col justify-center items-center relative overflow-hidden">
-          <div className="absolute inset-0">
-            {/* Background with mountain silhouette effect */}
-            <div className="absolute inset-0 bg-gradient-to-b from-sky-900 via-blue-900 to-indigo-950"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
-          </div>
-          
-          <div className="relative z-10 text-center space-y-6 px-8 max-w-4xl">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-              {/* Profile Photo Placeholder */}
-              <div className="relative group">
-                <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
-                  <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
-                    {/* Replace this div with your actual image */}
-                    <div className="text-gray-400 text-center p-4">
-                      <Users className="w-20 h-20 mx-auto mb-2" />
-                      <p className="text-sm">[Your Photo Here]</p>
-                      <p className="text-xs mt-2">Replace with your image</p>
-                    </div>
-                  </div>
-                </div>
-                {/* Mountain badge */}
-                <div className="absolute -bottom-2 -right-2 bg-gradient-to-br from-green-600 to-teal-600 rounded-full p-3 shadow-lg">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
-                  </svg>
-                </div>
-              </div>
-              
-              {/* Info Section */}
-              <div className="text-left space-y-4">
-                <h1 className="text-5xl font-black text-white mb-2">
-                  Surendra Tamang
-                </h1>
-                <p className="text-2xl text-blue-400 font-light">
-                  Data Engineer
-                </p>
-                
-                <div className="flex items-center space-x-3 mt-6 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 inline-flex">
-                  <span className="text-xl">🏔️</span>
-                  <span className="text-lg text-gray-300">Trekking Enthusiast</span>
-                  <span className="text-gray-400">|</span>
-                  <span className="text-lg text-blue-300">Thorang La Pass</span>
-                </div>
-              </div>
-            </div>
-            
-            {/* Trekking Photo Section */}
-            <div className="mt-8 relative group cursor-pointer">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-2 backdrop-blur-sm">
-                <div className="relative overflow-hidden rounded-lg">
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
-                    {/* Replace with your Thorang La Pass photo */}
-                    <div className="text-gray-400 text-center">
-                      <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
-                      </svg>
-                      <p className="text-sm">[Your Thorang La Pass Photo]</p>
-                      <p className="text-xs mt-1 text-blue-300">5,416m altitude</p>
-                    </div>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8 text-gray-400">
-              <p className="text-lg italic">"From conquering mountains to exploring digital peaks"</p>
-            </div>
-          </div>
-          
-          <div className="absolute bottom-10 animate-bounce">
-            <ChevronRight className="w-8 h-8 text-gray-400" />
-          </div>
-        </div>
-      ),
-    },
-    // Slide 2: Title
-    {
-      id: 2,
-      content: (
-        <div className="h-full flex flex-col justify-center items-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 opacity-50"></div>
-          <div className="relative z-10 text-center space-y-8 px-8">
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <Code className="w-32 h-32 text-purple-400 animate-pulse" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Globe className="w-16 h-16 text-yellow-400 animate-bounce" />
-                </div>
-              </div>
-            </div>
-            <h1 className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
-              Web Scraping 101
-            </h1>
-            <p className="text-3xl text-gray-300 font-light">
-              Mastering Python & Scrapy for Data Extraction
-            </p>
-            <div className="mt-12 text-gray-400 animate-pulse">
-              <p className="text-xl italic">"Turning the web into your database, one scrape at a time"</p>
-            </div>
-          </div>
-          <div className="absolute bottom-10 animate-bounce">
-            <ChevronRight className="w-8 h-8 text-gray-400" />
-          </div>
-        </div>
-      ),
-    },
     // Slide 3: What is Web Scraping?
     {
       id: 3,
@@ -363,12 +214,12 @@ const Presentation = () => {
                   <div className="pl-8">
                     <span className="text-purple-400">for</span> quote <span className="text-purple-400">in</span> response.css(<span className="text-orange-400">'div.quote'</span>):<br />
                     <div className="pl-8">
-                      <span className="text-purple-400">yield</span> {'{'}
+                      <span className="text-purple-400">yield</span> {<br />
                       <div className="pl-8">
                         <span className="text-orange-400">'text'</span>: quote.css(<span className="text-orange-400">'span.text::text'</span>).get(),<br />
                         <span className="text-orange-400">'author'</span>: quote.css(<span className="text-orange-400">'span small::text'</span>).get(),<br />
                       </div>
-                      {'}'}
+                      }
                     </div>
                   </div>
                 </div>
@@ -421,9 +272,64 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 9: Best Practices & Ethics
+    // Slide 9: Advanced Scrapy Features
     {
       id: 9,
+      content: (
+        <div className="h-full flex flex-col justify-center items-center p-12">
+          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+            Advanced Scrapy Features
+          </h2>
+          <div className="grid grid-cols-2 gap-8 w-full max-w-6xl">
+            <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm">
+              <div className="text-green-400 mb-2"># Handling Pagination</div>
+              <div className="text-gray-300">
+                next_page = response.css(<span className="text-orange-400">'a.next::attr(href)'</span>).get()<br />
+                <span className="text-purple-400">if</span> next_page:<br />
+                <div className="pl-4">
+                  <span className="text-purple-400">yield</span> response.follow(next_page, self.parse)
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm">
+              <div className="text-green-400 mb-2"># Custom Settings</div>
+              <div className="text-gray-300">
+                custom_settings = {<br />
+                <div className="pl-4">
+                  <span className="text-orange-400">'DOWNLOAD_DELAY'</span>: <span className="text-blue-400">3</span>,<br />
+                  <span className="text-orange-400">'CONCURRENT_REQUESTS'</span>: <span className="text-blue-400">1</span>,<br />
+                </div>
+                }
+              </div>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm">
+              <div className="text-green-400 mb-2"># Item Pipelines</div>
+              <div className="text-gray-300">
+                <span className="text-purple-400">def</span> <span className="text-yellow-400">process_item</span>(<span className="text-blue-400">self</span>, item, spider):<br />
+                <div className="pl-4">
+                  item[<span className="text-orange-400">'price'</span>] = float(item[<span className="text-orange-400">'price'</span>])<br />
+                  <span className="text-purple-400">return</span> item
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm">
+              <div className="text-green-400 mb-2"># User Agent Rotation</div>
+              <div className="text-gray-300">
+                <span className="text-gray-500"># settings.py</span><br />
+                DOWNLOADER_MIDDLEWARES = {<br />
+                <div className="pl-4">
+                  <span className="text-orange-400">'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware'</span>: <span className="text-blue-400">None</span>,<br />
+                </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    // Slide 10: Best Practices & Ethics
+    {
+      id: 10,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
@@ -468,9 +374,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 10: Common Challenges
+    // Slide 11: Common Challenges
     {
-      id: 10,
+      id: 11,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400">
@@ -515,9 +421,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 11: Real-World Applications
+    // Slide 12: Real-World Applications
     {
-      id: 11,
+      id: 12,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -566,9 +472,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 12: Scaling to Production
+    // Slide 13: Scaling Your Scraping
     {
-      id: 12,
+      id: 13,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -609,9 +515,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 13: Your Learning Journey
+    // Slide 14: Your Learning Path
     {
-      id: 13,
+      id: 14,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
@@ -661,35 +567,7 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 14: Key Takeaways
-    {
-      id: 14,
-      content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
-          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-            Key Takeaways
-          </h2>
-          <div className="space-y-6 w-full max-w-4xl">
-            {[
-              { number: '1', text: 'Web scraping is a powerful data collection tool', icon: '🔍' },
-              { number: '2', text: 'Python + Scrapy = Professional scraping', icon: '🐍' },
-              { number: '3', text: 'Always check legal and ethical implications', icon: '⚖️' },
-              { number: '4', text: 'Respect websites and their resources', icon: '🤝' },
-              { number: '5', text: 'Practice makes perfect - build projects!', icon: '🚀' },
-            ].map((point, idx) => (
-              <div key={idx} className="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl border border-cyan-500/30 flex items-center space-x-4 transform hover:scale-105 transition-transform">
-                <div className="bg-cyan-500 text-black w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
-                  {point.number}
-                </div>
-                <span className="text-3xl">{point.icon}</span>
-                <span className="text-2xl text-white flex-1">{point.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ),
-    },
-    // Slide 15: Questions & Resources
+    // Slide 15: Q&A
     {
       id: 15,
       content: (
@@ -707,12 +585,13 @@ const Presentation = () => {
               <p>GitHub: [your username]</p>
             </div>
             <div className="mt-12 text-gray-400">
-              <p className="text-lg mb-4">Learning Resources:</p>
-              <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto text-sm">
-                <div className="bg-gray-800/50 p-3 rounded-lg">📚 Scrapy Documentation</div>
-                <div className="bg-gray-800/50 p-3 rounded-lg">🐍 Real Python Tutorials</div>
-                <div className="bg-gray-800/50 p-3 rounded-lg">💻 Web Scraping with Python Book</div>
-                <div className="bg-gray-800/50 p-3 rounded-lg">🎓 Scrapy Cloud Free Tier</div>
+              <p className="text-lg mb-4">Resources:</p>
+              <div className="flex justify-center space-x-6 text-sm">
+                <span>Scrapy Documentation</span>
+                <span>•</span>
+                <span>Python.org</span>
+                <span>•</span>
+                <span>Real Python Tutorials</span>
               </div>
             </div>
             <div className="mt-12 text-2xl text-gray-300 italic">
@@ -722,48 +601,3 @@ const Presentation = () => {
         </div>
       ),
     },
-  ];
-
-  return (
-    <div className="h-screen bg-black text-white overflow-hidden relative">
-      <div className={`h-full transition-all duration-500 ${animateIn ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-full'}`}>
-        {slides[currentSlide].content}
-      </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
-        <button
-          onClick={prevSlide}
-          disabled={currentSlide === 0}
-          className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        
-        <div className="flex space-x-2">
-          {slides.map((_, idx) => (
-            <div
-              key={idx}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentSlide ? 'w-8 bg-white' : 'w-2 bg-gray-600'
-              }`}
-            />
-          ))}
-        </div>
-        
-        <button
-          onClick={nextSlide}
-          disabled={currentSlide === slides.length - 1}
-          className="p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-      </div>
-      
-      <div className="absolute top-8 right-8 text-gray-400">
-        {currentSlide + 1} / {slides.length}
-      </div>
-    </div>
-  );
-};
-
-export default Presentation;
