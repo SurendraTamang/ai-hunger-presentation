@@ -1,3 +1,3 @@
-# Feeding the Beast: How Web Scraping Fuels AI's Hunger
+# Web Scraping 101
 
-Every day, AI models devour the equivalent of millions of books from the internet—your Reddit posts, Stack Overflow answers, tweets, and artwork. This eye-opening presentation reveals the hidden world of industrial-scale web scraping that powers ChatGPT, Claude, and other AI giants. Discover how tech companies extract $130 million worth of value from Reddit alone, why creators are fighting back with billion-dollar lawsuits, and the shocking truth: we'll run out of quality human data by 2028. Learn about the technical arms race between scrapers and defenders, the real human cost of AI training, and what happens when the internet's well runs dry. Whether you're a developer, creator, or curious citizen, you'll leave understanding why your online content is the new oil—and why you're not getting paid for it.
+This my presentation slides presented on Developers Community Pokhara in August 2, 2025.

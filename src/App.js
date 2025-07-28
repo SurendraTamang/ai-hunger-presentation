@@ -52,11 +52,18 @@ const Presentation = () => {
               <div className="relative group">
                 <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1">
                   <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center overflow-hidden">
-                    {/* Replace this div with your actual image */}
-                    <div className="text-gray-400 text-center p-4">
+                    <img 
+                      src={`${process.env.PUBLIC_URL}/profile-photo.jpg`}
+                      alt="Surendra Tamang" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.log('Image failed to load:', e.target.src);
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-center p-4" style={{ display: 'none' }}>
                       <Users className="w-20 h-20 mx-auto mb-2" />
-                      <p className="text-sm">[Your Photo Here]</p>
-                      <p className="text-xs mt-2">Replace with your image</p>
                     </div>
                   </div>
                 </div>
@@ -71,17 +78,17 @@ const Presentation = () => {
               {/* Info Section */}
               <div className="text-left space-y-4">
                 <h1 className="text-5xl font-black text-white mb-2">
-                  Surendra Tamang
+                  Surendra Tamang 
                 </h1>
                 <p className="text-2xl text-blue-400 font-light">
-                  Data Engineer
+                  Software Engineer from Nepal <span className="text-xl">🇳🇵</span>
                 </p>
                 
                 <div className="flex items-center space-x-3 mt-6 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 inline-flex">
                   <span className="text-xl">🏔️</span>
                   <span className="text-lg text-gray-300">Trekking Enthusiast</span>
                   <span className="text-gray-400">|</span>
-                  <span className="text-lg text-blue-300">Thorang La Pass</span>
+                  <span className="text-lg text-blue-300">Thorang La Pass - 2022</span>
                 </div>
               </div>
             </div>
@@ -90,14 +97,25 @@ const Presentation = () => {
             <div className="mt-8 relative group cursor-pointer">
               <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-2 backdrop-blur-sm">
                 <div className="relative overflow-hidden rounded-lg">
-                  <div className="w-full h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
-                    {/* Replace with your Thorang La Pass photo */}
-                    <div className="text-gray-400 text-center">
-                      <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
-                      </svg>
-                      <p className="text-sm">[Your Thorang La Pass Photo]</p>
-                      <p className="text-xs mt-1 text-blue-300">5,416m altitude</p>
+                  <div className="w-full h-48 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={`${process.env.PUBLIC_URL}/thorong-la.jpg`}
+                      alt="Thorang La Pass - 5,416m altitude" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.log('Thorong photo failed to load:', e.target.src);
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-full h-full flex items-center justify-center text-gray-400 text-center" style={{ display: 'none' }}>
+                      <div>
+                        <svg className="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14 6l-4.22 5.63 1.25 1.67L14 9.33 19 16h-8.46l-4.01-5.37L1 18h22L14 6zM5 16l1.52-2.03L8.04 16H5z"/>
+                        </svg>
+                        <p className="text-sm">Thorang La Pass</p>
+                        <p className="text-xs mt-1 text-blue-300">5,416m altitude</p>
+                      </div>
                     </div>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -135,7 +153,7 @@ const Presentation = () => {
               Web Scraping 101
             </h1>
             <p className="text-3xl text-gray-300 font-light">
-              Mastering Python & Scrapy for Data Extraction
+              An Introduction to Data Extraction from the Web
             </p>
             <div className="mt-12 text-gray-400 animate-pulse">
               <p className="text-xl italic">"Turning the web into your database, one scrape at a time"</p>
@@ -187,54 +205,98 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 4: Why Web Scraping?
+    // Slide 4: The Web Scraping Process
     {
       id: 4,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
-            Why Web Scraping Matters
+            The Web Scraping Process
           </h2>
-          <div className="grid grid-cols-2 gap-8 w-full max-w-5xl">
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-6 rounded-xl border border-green-500/30">
+          
+          {/* Main Process Flow */}
+          <div className="w-full max-w-6xl mb-8">
+            <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-700">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
-                  <span className="text-4xl">💰</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🕷️</span>
+                  </div>
                   <div>
-                    <h3 className="text-xl font-bold text-green-400">Business Intelligence</h3>
-                    <p className="text-gray-300">Monitor competitor prices, track market trends</p>
+                    <h3 className="text-2xl font-bold text-blue-400">CRAWLING</h3>
+                    <p className="text-gray-300">Navigate & Discover</p>
                   </div>
                 </div>
-              </div>
-              <div className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 p-6 rounded-xl border border-blue-500/30">
+                
+                <div className="text-4xl text-gray-600 animate-pulse">→</div>
+                
                 <div className="flex items-center space-x-4">
-                  <span className="text-4xl">📊</span>
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">🔍</span>
+                  </div>
                   <div>
-                    <h3 className="text-xl font-bold text-blue-400">Data Analysis</h3>
-                    <p className="text-gray-300">Gather large datasets for research and ML</p>
+                    <h3 className="text-2xl font-bold text-green-400">PARSING</h3>
+                    <p className="text-gray-300">Extract & Structure</p>
+                  </div>
+                </div>
+                
+                <div className="text-4xl text-gray-600 animate-pulse">→</div>
+                
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <span className="text-2xl">💾</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-purple-400">STORING</h3>
+                    <p className="text-gray-300">Save & Process</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-6 rounded-xl border border-purple-500/30">
-                <div className="flex items-center space-x-4">
-                  <span className="text-4xl">🚀</span>
-                  <div>
-                    <h3 className="text-xl font-bold text-purple-400">Automation</h3>
-                    <p className="text-gray-300">Automate manual data collection tasks</p>
-                  </div>
-                </div>
+          </div>
+
+          {/* Detailed Breakdown */}
+          <div className="grid grid-cols-3 gap-6 w-full max-w-6xl">
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 p-6 rounded-xl border border-blue-500/50">
+              <div className="text-center mb-4">
+                <span className="text-5xl">🕷️</span>
+                <h3 className="text-2xl font-bold text-blue-400 mt-2">Crawling</h3>
               </div>
-              <div className="bg-gradient-to-br from-orange-900/20 to-red-900/20 p-6 rounded-xl border border-orange-500/30">
-                <div className="flex items-center space-x-4">
-                  <span className="text-4xl">🎯</span>
-                  <div>
-                    <h3 className="text-xl font-bold text-orange-400">Lead Generation</h3>
-                    <p className="text-gray-300">Find potential customers and contacts</p>
-                  </div>
-                </div>
+              <ul className="space-y-2 text-white/90">
+                <li>• Send HTTP requests</li>
+                <li>• Follow links systematically</li>
+                <li>• Handle pagination</li>
+                <li>• Manage request queues</li>
+                <li>• Respect rate limits</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 p-6 rounded-xl border border-green-500/50">
+              <div className="text-center mb-4">
+                <span className="text-5xl">🔍</span>
+                <h3 className="text-2xl font-bold text-green-400 mt-2">Parsing</h3>
               </div>
+              <ul className="space-y-2 text-white/90">
+                <li>• CSS Selectors</li>
+                <li>• XPath expressions</li>
+                <li>• Regular expressions</li>
+                <li>• Data cleaning</li>
+                <li>• Structure validation</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 p-6 rounded-xl border border-purple-500/50">
+              <div className="text-center mb-4">
+                <span className="text-5xl">💾</span>
+                <h3 className="text-2xl font-bold text-purple-400 mt-2">Storing</h3>
+              </div>
+              <ul className="space-y-2 text-white/90">
+                <li>• JSON/CSV export</li>
+                <li>• Database insertion</li>
+                <li>• Data transformation</li>
+                <li>• Quality checks</li>
+                <li>• Pipeline processing</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -248,7 +310,7 @@ const Presentation = () => {
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
             Python Web Scraping Tools
           </h2>
-          <div className="grid grid-cols-2 gap-8 w-full max-w-5xl">
+          <div className="grid grid-cols-3 gap-6 w-full max-w-6xl">
             {[
               {
                 tool: 'Requests',
@@ -272,9 +334,23 @@ const Presentation = () => {
                 color: 'from-purple-600 to-pink-600'
               },
               {
-                tool: 'Selenium',
-                desc: 'Browser automation',
-                use: 'JavaScript-heavy sites',
+                tool: 'XPath & CSS Selectors',
+                desc: 'Parsing techniques',
+                use: 'Precise element targeting & extraction',
+                icon: '🎯',
+                color: 'from-cyan-600 to-blue-600'
+              },
+              {
+                tool: 'Playwright',
+                desc: 'Modern browser automation',
+                use: 'JavaScript sites & cross-browser testing',
+                icon: '🎭',
+                color: 'from-indigo-600 to-purple-600'
+              },
+              {
+                tool: 'Puppeteer',
+                desc: 'Chrome automation library',
+                use: 'Headless Chrome control & JS rendering',
                 icon: '🤖',
                 color: 'from-orange-600 to-red-600'
               },
@@ -282,10 +358,10 @@ const Presentation = () => {
               <div key={idx} className={`bg-gradient-to-br ${item.color} p-6 rounded-xl`}>
                 <div className="flex items-center space-x-4 mb-4">
                   <span className="text-4xl">{item.icon}</span>
-                  <h3 className="text-2xl font-bold text-white">{item.tool}</h3>
+                  <h3 className="text-xl font-bold text-white">{item.tool}</h3>
                 </div>
-                <p className="text-white/80 mb-2">{item.desc}</p>
-                <p className="text-white/90 font-medium">{item.use}</p>
+                <p className="text-white/80 mb-2 text-sm">{item.desc}</p>
+                <p className="text-white/90 font-medium text-sm">{item.use}</p>
               </div>
             ))}
           </div>
@@ -421,9 +497,107 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 9: Best Practices & Ethics
+    // Slide 9: Scrapy ETL Pipeline for Data Engineers 
     {
       id: 9,
+      content: (
+        <div className="h-full flex flex-col justify-center items-center p-12">
+          <h2 className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+            Scrapy ETL Pipeline for Data Engineers
+          </h2>
+          
+          {/* ETL Flow Diagram */}
+          <div className="w-full max-w-6xl mb-8">
+            <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 rounded-2xl p-6 border border-gray-600">
+              <div className="flex items-center justify-between text-center">
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mb-3">
+                    <span className="text-3xl font-bold text-white">E</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-green-400">EXTRACT</h3>
+                  <p className="text-sm text-gray-300 mt-1">Scrapy Spiders</p>
+                </div>
+                
+                <div className="text-5xl text-blue-400 animate-pulse mx-6">→</div>
+                
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mb-3">
+                    <span className="text-3xl font-bold text-white">T</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-400">TRANSFORM</h3>
+                  <p className="text-sm text-gray-300 mt-1">Item Pipelines</p>
+                </div>
+                
+                <div className="text-5xl text-purple-400 animate-pulse mx-6">→</div>
+                
+                <div className="flex flex-col items-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-3">
+                    <span className="text-3xl font-bold text-white">L</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-purple-400">LOAD</h3>
+                  <p className="text-sm text-gray-300 mt-1">Data Sinks</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed Components */}
+          <div className="grid grid-cols-3 gap-6 w-full max-w-6xl">
+            <div className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 p-6 rounded-xl border border-green-500/50">
+              <div className="text-center mb-4">
+                <span className="text-4xl">🕷️</span>
+                <h3 className="text-xl font-bold text-green-400 mt-2">Extract Layer</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-white/90">
+                <li>• Multi-domain spiders</li>
+                <li>• Concurrent crawling</li>
+                <li>• Auto-throttling</li>
+                <li>• Request/Response middleware</li>
+                <li>• Error handling & retries</li>
+                <li>• Distributed crawling</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 p-6 rounded-xl border border-blue-500/50">
+              <div className="text-center mb-4">
+                <span className="text-4xl">⚙️</span>
+                <h3 className="text-xl font-bold text-blue-400 mt-2">Transform Layer</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-white/90">
+                <li>• Data validation pipelines</li>
+                <li>• Type conversion & casting</li>
+                <li>• Duplicate filtering</li>
+                <li>• Data enrichment</li>
+                <li>• Custom processing logic</li>
+                <li>• Schema normalization</li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 p-6 rounded-xl border border-purple-500/50">
+              <div className="text-center mb-4">
+                <span className="text-4xl">🗄️</span>
+                <h3 className="text-xl font-bold text-purple-400 mt-2">Load Layer</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-white/90">
+                <li>• PostgreSQL/MySQL</li>
+                <li>• MongoDB/Redis</li>
+                <li>• Cloud storage (S3/GCS)</li>
+                <li>• Data warehouses</li>
+                <li>• Message queues</li>
+                <li>• Real-time streaming</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-6 text-center">
+            <p className="text-lg text-gray-400 italic">Perfect for building production data pipelines at scale</p>
+          </div>
+        </div>
+      ),
+    },
+    // Slide 10: Best Practices & Ethics
+    {
+      id: 10,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
@@ -468,9 +642,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 10: Common Challenges
+    // Slide 11: Common Challenges
     {
-      id: 10,
+      id: 11,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400">
@@ -515,9 +689,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 11: Real-World Applications
+    // Slide 12: Real-World Applications
     {
-      id: 11,
+      id: 12,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -566,9 +740,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 12: Scaling to Production
+    // Slide 13: Scaling to Production
     {
-      id: 12,
+      id: 13,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
@@ -609,9 +783,9 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 13: Your Learning Journey
+    // Slide 14: Your Learning Journey
     {
-      id: 13,
+      id: 14,
       content: (
         <div className="h-full flex flex-col justify-center items-center p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
@@ -661,34 +835,6 @@ const Presentation = () => {
         </div>
       ),
     },
-    // Slide 14: Key Takeaways
-    {
-      id: 14,
-      content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
-          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-            Key Takeaways
-          </h2>
-          <div className="space-y-6 w-full max-w-4xl">
-            {[
-              { number: '1', text: 'Web scraping is a powerful data collection tool', icon: '🔍' },
-              { number: '2', text: 'Python + Scrapy = Professional scraping', icon: '🐍' },
-              { number: '3', text: 'Always check legal and ethical implications', icon: '⚖️' },
-              { number: '4', text: 'Respect websites and their resources', icon: '🤝' },
-              { number: '5', text: 'Practice makes perfect - build projects!', icon: '🚀' },
-            ].map((point, idx) => (
-              <div key={idx} className="bg-gradient-to-r from-gray-800 to-gray-900 p-6 rounded-xl border border-cyan-500/30 flex items-center space-x-4 transform hover:scale-105 transition-transform">
-                <div className="bg-cyan-500 text-black w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold">
-                  {point.number}
-                </div>
-                <span className="text-3xl">{point.icon}</span>
-                <span className="text-2xl text-white flex-1">{point.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      ),
-    },
     // Slide 15: Questions & Resources
     {
       id: 15,
@@ -702,9 +848,10 @@ const Presentation = () => {
             <div className="text-8xl mb-8">❓</div>
             <div className="space-y-4 text-xl text-gray-300">
               <p>Contact:</p>
-              <p>Email: [your email]</p>
-              <p>LinkedIn: [your profile]</p>
-              <p>GitHub: [your username]</p>
+              <p>📧 Email: tamangsurendra44@gmail.com</p>
+              <p>💼 LinkedIn: linkedin.com/in/surentmg</p>
+              <p>🐙 GitHub: github.com/surendratamang</p>
+              <p>📰 Newsletter: learnwebscraping.substack.com</p>
             </div>
             <div className="mt-12 text-gray-400">
               <p className="text-lg mb-4">Learning Resources:</p>
