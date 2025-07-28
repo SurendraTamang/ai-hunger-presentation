@@ -88,7 +88,7 @@ const Presentation = () => {
                   <span className="text-xl">🏔️</span>
                   <span className="text-lg text-gray-300">Trekking Enthusiast</span>
                   <span className="text-gray-400">|</span>
-                  <span className="text-lg text-blue-300">Thorang La Pass - 2022</span>
+                  <span className="text-lg text-blue-300">Thorang La Pass</span>
                 </div>
               </div>
             </div>
@@ -149,10 +149,10 @@ const Presentation = () => {
                 </div>
               </div>
             </div>
-            <h1 className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-4">
               Web Scraping 101
             </h1>
-            <p className="text-3xl text-gray-300 font-light">
+            <p className="text-lg md:text-2xl lg:text-3xl text-gray-300 font-light">
               An Introduction to Data Extraction from the Web
             </p>
             <div className="mt-12 text-gray-400 animate-pulse">
@@ -169,11 +169,11 @@ const Presentation = () => {
     {
       id: 3,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
-          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 lg:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
             What is Web Scraping?
           </h2>
-          <div className="grid grid-cols-2 gap-8 w-full max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 w-full max-w-5xl px-4">
             <div className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 p-8 rounded-2xl border border-blue-500/30">
               <Globe className="w-16 h-16 text-blue-400 mb-4" />
               <h3 className="text-2xl font-bold text-blue-400 mb-4">Automated Data Extraction</h3>
@@ -209,15 +209,15 @@ const Presentation = () => {
     {
       id: 4,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
-          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 lg:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">
             The Web Scraping Process
           </h2>
           
           {/* Main Process Flow */}
-          <div className="w-full max-w-6xl mb-8">
-            <div className="bg-gray-900/50 rounded-2xl p-8 border border-gray-700">
-              <div className="flex items-center justify-between">
+          <div className="w-full max-w-6xl mb-8 px-4">
+            <div className="bg-gray-900/50 rounded-2xl p-4 md:p-8 border border-gray-700">
+              <div className="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
                     <span className="text-2xl">🕷️</span>
@@ -228,7 +228,7 @@ const Presentation = () => {
                   </div>
                 </div>
                 
-                <div className="text-4xl text-gray-600 animate-pulse">→</div>
+                <div className="text-2xl md:text-4xl text-gray-600 animate-pulse rotate-90 md:rotate-0">→</div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
@@ -240,7 +240,7 @@ const Presentation = () => {
                   </div>
                 </div>
                 
-                <div className="text-4xl text-gray-600 animate-pulse">→</div>
+                <div className="text-2xl md:text-4xl text-gray-600 animate-pulse rotate-90 md:rotate-0">→</div>
                 
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center">
@@ -256,7 +256,7 @@ const Presentation = () => {
           </div>
 
           {/* Detailed Breakdown */}
-          <div className="grid grid-cols-3 gap-6 w-full max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl px-4">
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/30 p-6 rounded-xl border border-blue-500/50">
               <div className="text-center mb-4">
                 <span className="text-5xl">🕷️</span>
@@ -306,11 +306,11 @@ const Presentation = () => {
     {
       id: 5,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
-          <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 lg:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
             Python Web Scraping Tools
           </h2>
-          <div className="grid grid-cols-3 gap-6 w-full max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl px-4">
             {[
               {
                 tool: 'Requests',
@@ -372,7 +372,7 @@ const Presentation = () => {
     {
       id: 6,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
             Why Choose Scrapy?
           </h2>
@@ -418,7 +418,7 @@ const Presentation = () => {
     {
       id: 7,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
             Your First Scrapy Spider
           </h2>
@@ -461,7 +461,7 @@ const Presentation = () => {
     {
       id: 8,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">
             How Scrapy Works
           </h2>
@@ -501,15 +501,15 @@ const Presentation = () => {
     {
       id: 9,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
             Scrapy ETL Pipeline for Data Engineers
           </h2>
           
           {/* ETL Flow Diagram */}
-          <div className="w-full max-w-6xl mb-8">
-            <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 rounded-2xl p-6 border border-gray-600">
-              <div className="flex items-center justify-between text-center">
+          <div className="w-full max-w-6xl mb-8 px-4">
+            <div className="bg-gradient-to-r from-gray-900/80 to-gray-800/80 rounded-2xl p-4 md:p-6 border border-gray-600">
+              <div className="flex flex-col md:flex-row items-center justify-between text-center space-y-6 md:space-y-0">
                 <div className="flex flex-col items-center">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mb-3">
                     <span className="text-3xl font-bold text-white">E</span>
@@ -518,7 +518,7 @@ const Presentation = () => {
                   <p className="text-sm text-gray-300 mt-1">Scrapy Spiders</p>
                 </div>
                 
-                <div className="text-5xl text-blue-400 animate-pulse mx-6">→</div>
+                <div className="text-3xl md:text-5xl text-blue-400 animate-pulse mx-6 rotate-90 md:rotate-0">→</div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mb-3">
@@ -528,7 +528,7 @@ const Presentation = () => {
                   <p className="text-sm text-gray-300 mt-1">Item Pipelines</p>
                 </div>
                 
-                <div className="text-5xl text-purple-400 animate-pulse mx-6">→</div>
+                <div className="text-3xl md:text-5xl text-purple-400 animate-pulse mx-6 rotate-90 md:rotate-0">→</div>
                 
                 <div className="flex flex-col items-center">
                   <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mb-3">
@@ -599,7 +599,7 @@ const Presentation = () => {
     {
       id: 10,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
             Scraping Ethics & Best Practices
           </h2>
@@ -646,7 +646,7 @@ const Presentation = () => {
     {
       id: 11,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-400">
             Common Scraping Challenges
           </h2>
@@ -693,7 +693,7 @@ const Presentation = () => {
     {
       id: 12,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
             Real-World Applications
           </h2>
@@ -744,7 +744,7 @@ const Presentation = () => {
     {
       id: 13,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
             Scaling to Production
           </h2>
@@ -787,7 +787,7 @@ const Presentation = () => {
     {
       id: 14,
       content: (
-        <div className="h-full flex flex-col justify-center items-center p-12">
+        <div className="h-full flex flex-col justify-center items-center p-4 md:p-8 lg:p-12">
           <h2 className="text-5xl font-bold mb-12 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
             Your Learning Journey
           </h2>
